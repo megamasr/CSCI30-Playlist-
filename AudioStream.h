@@ -1,16 +1,18 @@
 #pragma once
-#include "libary.h"
-
+#include <string>
+#include "AudioBuffer.h"
 using namespace std;
-class AudioStream{
-protected:
-string title;
-string artist;
-int duration;
-public:
 
-AudioStream(string tit,string art,int dur);
-void print();
-virtual ~AudioStream();
-virtual void play() const = 0;
+class AudioStream {
+protected:
+    string title;
+    int duration;
+    AudioBuffer buffer;
+
+public:
+    AudioStream(string tit, int dur);
+    virtual ~AudioStream();
+
+    virtual void print();
+    virtual void play() const;
 };

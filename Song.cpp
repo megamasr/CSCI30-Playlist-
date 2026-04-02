@@ -1,12 +1,22 @@
-
 #include "Song.h"
+#include <iostream>
 using namespace std;
 
-Song::Song(string tit,string art,int dur,string alb) : AudioStream(tit,art,dur), albumName(alb){}
+Song::Song(string tit, string art, int dur, string alb)
+    : AudioStream(tit, dur), artist(art), albumName(alb) {}
 
-void Song::play() const{
-   
-    cout << "Now playing Song: "  <<  title << " by " << artist << " from the album " << albumName << "." << endl;
- 
+void Song::print() {
+    cout << "The stream \"" << title
+         << "\" is " << duration
+         << " seconds, performed by "
+         << artist << "." << endl;
 }
 
+void Song::play() const {
+    cout << "Now playing Song: " << title
+         << " by " << artist
+         << " [Album: " << albumName << "]" << endl;
+         
+
+    AudioStream::play();
+}

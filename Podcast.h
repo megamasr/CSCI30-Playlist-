@@ -1,14 +1,15 @@
-
+#pragma once
 #include "AudioStream.h"
 using namespace std;
 
-class Podcast : public AudioStream{
+class Podcast : public AudioStream {
 private:
-int episodeNumber;
-string guest;
+    string host;
+    int episodeNumber;
+    string guest;
 
 public:
-Podcast(string tit,string art,int dur,int epi,string g);
-void play() const;
-
+   Podcast(string tit, string host, int dur, int epi, string g);
+    void print();
+    void play() const;
 };

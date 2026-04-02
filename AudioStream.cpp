@@ -1,15 +1,18 @@
-
 #include "AudioStream.h"
+#include <iostream>
 using namespace std;
 
-AudioStream::AudioStream(string tit,string art,int dur): title(tit),artist(art),duration(dur){}
- 
- AudioStream::~AudioStream(){}
+AudioStream::AudioStream(string tit, int dur)
+    : title(tit), duration(dur), buffer(dur, tit) {}
 
-   void AudioStream::print(){
+AudioStream::~AudioStream() {}
+
+void AudioStream::print() {
     cout << "The stream \"" << title
          << "\" is " << duration
-         << " seconds, performed by "
-         << artist << "." << endl;
+         << " seconds." << endl;
 }
 
+void AudioStream::play() const {
+    buffer.play();
+}

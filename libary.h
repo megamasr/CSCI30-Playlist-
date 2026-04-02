@@ -16,6 +16,7 @@
 #include <cmath>         // math functions like pow, sqrt
 #include <cstdlib>       // general utilities, rand, system
 #include <random>        // better random generation
+#include <cstring>
 #include <stdexcept>     // runtime_error, invalid_argument
 #include <cctype>        // char checks: isdigit, isalpha
 #include <functional>    // std::function, lambdas
